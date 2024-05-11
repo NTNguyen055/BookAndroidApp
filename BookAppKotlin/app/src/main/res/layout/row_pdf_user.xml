@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/white"
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="0dp"
+    app:contentPadding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    Show anh pdf va tien trinh load anh-->
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="140dp"
+            android:id="@+id/pdfRl"
+            android:background="@color/gray02"
+            android:layout_marginEnd="5dp">
+
+            <!--        PdfView-->
+            <com.github.barteksc.pdfviewer.PDFView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/pdfView"/>
+
+            <!--        Progress-->
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/progressBar"/>
+
+        </RelativeLayout>
+
+<!--        TextView tieu de sach-->
+        <TextView
+            android:id="@+id/titleTv"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/pdfRl"
+            android:maxLines="1"
+            android:text="Tiêu đề sách"
+            android:ellipsize="end"/>
+
+        <!--        Duong dan-->
+        <TextView
+            android:id="@+id/descriptionTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_below="@id/titleTv"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:layout_toEndOf="@id/pdfRl"
+            android:maxLines="4"
+            android:text="Đường dẫn sách"/>
+
+        <!--        Loai Sach-->
+        <TextView
+            android:id="@+id/categoryTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:maxLines="1"
+            android:text="Tên sách"/>
+
+        <!--        Kich thuoc-->
+        <TextView
+            android:id="@+id/sizeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@id/pdfRl"
+            android:maxLines="1"
+            android:text="13MB"/>
+
+        <!--        Du lieu-->
+        <TextView
+            android:id="@+id/dataTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_alignParentBottom="true"
+            android:layout_toStartOf="@id/categoryTv"
+            android:layout_toEndOf="@id/sizeTv"
+            android:maxLines="1"
+            android:text="dd/mm/yyyy"
+            android:textAlignment="center"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
